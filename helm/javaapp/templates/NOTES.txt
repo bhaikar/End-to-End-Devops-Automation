@@ -1,0 +1,5 @@
+javaapp deployed as release "{{ .Release.Name }}" in namespace "{{ .Release.Namespace }}".
+
+Test it:
+  kubectl -n {{ .Release.Namespace }} port-forward svc/{{ include "javaapp.fullname" . }} 8081:{{ .Values.service.port }}
+  curl http://localhost:8081/hello

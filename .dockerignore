@@ -1,0 +1,10 @@
+target/
+build/
+.gradle/
+.git/
+.idea/
+*.iml
+helm/
+Jenkinsfile
+jenkins/
+README.md

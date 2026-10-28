@@ -1,0 +1,33 @@
+replicaCount: 1
+
+image:
+  repository: docker.io/tenzo06/javaapp
+  tag: ""            # defaults to Chart appVersion; Jenkins overrides with the build number
+  pullPolicy: IfNotPresent
+
+springProfile: default
+greeting: "Hello from Java DevOps pipeline!"
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: false
+  className: nginx
+  host: javaapp.local
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 70

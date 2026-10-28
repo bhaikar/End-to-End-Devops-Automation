@@ -1,0 +1,6 @@
+replicaCount: 1
+springProfile: dev
+greeting: "Hello from DEV environment"
+ingress:
+  enabled: true
+  host: dev.javaapp.local

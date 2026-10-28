@@ -1,0 +1,18 @@
+replicaCount: 2
+springProfile: prod
+greeting: "Hello from PRODUCTION environment"
+ingress:
+  enabled: true
+  host: javaapp.local
+resources:
+  requests:
+    cpu: 200m
+    memory: 384Mi
+  limits:
+    cpu: 1000m
+    memory: 768Mi
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
