@@ -8,7 +8,7 @@ RUN mvn -B -q clean package -DskipTests
 
 # ---- Stage 2: slim runtime ----
 FROM eclipse-temurin:17-jre-alpine
-RUN addgroup -S app && adduser -S app -G app
+RUN apk upgrade --no-cache && addgroup -S app && adduser -S app -G app
 USER app
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar

@@ -57,7 +57,7 @@ pipeline {
 
     stage('Docker Build') {
       steps {
-        sh 'docker build -t $REGISTRY/$IMAGE:$TAG -t $REGISTRY/$IMAGE:latest .'
+        sh 'docker build --pull -t $REGISTRY/$IMAGE:$TAG -t $REGISTRY/$IMAGE:latest .'
       }
     }
 
