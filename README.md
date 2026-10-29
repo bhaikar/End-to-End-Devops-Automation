@@ -28,3 +28,6 @@ Git push -> Jenkins -> Maven/Gradle build+test -> Docker image -> Trivy scan -> 
 10. Monitoring and rollback
 
 Replace `YOUR_DOCKERHUB_USER` in `Jenkinsfile` and `helm/javaapp/values.yaml` with your Docker Hub username.
+
+#Jenkins url
+http://localhost:8090/
