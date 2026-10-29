@@ -63,7 +63,7 @@ pipeline {
 
     stage('Trivy Scan') {
       steps {
-        sh 'trivy image --exit-code 1 --severity CRITICAL --ignore-unfixed $REGISTRY/$IMAGE:$TAG'
+        sh 'trivy image --scanners vuln --timeout 15m --cache-dir /var/jenkins_home/.trivy-cache --exit-code 1 --severity CRITICAL --ignore-unfixed $REGISTRY/$IMAGE:$TAG'
       }
     }
 
