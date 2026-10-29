@@ -1,6 +1,6 @@
 replicaCount: 1
 springProfile: dev
-greeting: "Hello from DEV (auto-triggered build)"
+greeting: "Hello from DEV environment"
 ingress:
   enabled: true
   host: dev.javaapp.local

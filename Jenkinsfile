@@ -28,8 +28,10 @@ pipeline {
           sh 'chmod +x mvnw gradlew || true'
           if (params.BUILD_TOOL == 'gradle') {
             sh './gradlew clean build'
+            sh 'cp $(ls build/libs/*.jar | grep -v plain) app.jar'
           } else {
             sh './mvnw -B clean verify'
+            sh 'cp target/javaapp-*.jar app.jar'
           }
         }
       }
